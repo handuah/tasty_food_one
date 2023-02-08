@@ -139,6 +139,53 @@ class _WelcomePageState extends State<WelcomePage> {
                                           ),
                                         ),
                                       ),
+                                      Form(
+                                        child: Padding(
+                                          padding: EdgeInsets.symmetric(
+                                            vertical: 20.0,
+                                          ),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                "Email",
+                                                style: headingOneStyle.copyWith(
+                                                  color: Colors.black,
+                                                  fontSize: 18.0,
+                                                ),
+                                              ),
+                                              TextFormField(
+                                                textInputAction:
+                                                    TextInputAction.next,
+                                                decoration: InputDecoration(
+                                                  fillColor:
+                                                      HexColor('#F7F7F7'),
+                                                  border: OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          HexColor('#F7F7F7'),
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        const BorderRadius.all(
+                                                      Radius.circular(10.0),
+                                                    ),
+                                                  ),
+                                                  hintText: 'handuah@gmail.com',
+                                                  hintStyle:
+                                                      normalTextStyle.copyWith(
+                                                    color: Colors.grey,
+                                                    fontSize: 14.0,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ),
