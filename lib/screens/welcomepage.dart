@@ -1,0 +1,127 @@
+import 'package:easy_rich_text/easy_rich_text.dart';
+import 'package:flutter/material.dart';
+import 'package:tasty_food_one/styles/styling.dart';
+
+class WelcomePage extends StatefulWidget {
+  const WelcomePage({Key? key}) : super(key: key);
+
+  @override
+  State<WelcomePage> createState() => _WelcomePageState();
+}
+
+class _WelcomePageState extends State<WelcomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        alignment: AlignmentDirectional.center,
+        children: [
+          Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              color: orangeColor,
+              image: const DecorationImage(
+                image: NetworkImage(
+                  // "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2VyfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
+                  // "https://assets.cntraveller.in/photos/60ba26c0bfe773a828a47146/4:3/w_1440,h_1080,c_limit/Burgers-Mumbai-Delivery.jpg",
+                  "https://insanelygoodrecipes.com/wp-content/uploads/2020/05/Burger-with-fries.png",
+                ),
+                fit: BoxFit.fitHeight,
+                alignment: Alignment.center,
+              ),
+            ),
+          ),
+          Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.7),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                EasyRichText(
+                  "Tasty Food",
+                  textAlign: TextAlign.center,
+                  defaultStyle: headingOneStyle,
+                  patternList: [
+                    EasyRichTextPattern(
+                      targetString: 'Tasty',
+                      style: headingOneStyle.copyWith(
+                          color: orangeColor, fontWeight: FontWeight.normal),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.2,
+                ),
+                Text(
+                  "Welcome to Tasty Food",
+                  style: headingOneStyle.copyWith(
+                    fontSize: 24.0,
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.02,
+                ),
+                Text(
+                  "Get delicious food delivered at your doorstep",
+                  style: normalTextStyle,
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.04,
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.06,
+                  width: MediaQuery.of(context).size.width,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: orangeColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      elevation: 8.0,
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      "Sign In",
+                      style: normalTextStyle,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.02,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Don't have an account?",
+                      style: normalTextStyle.copyWith(fontSize: 12.0),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Don't have an account?",
+                        style: normalTextStyle.copyWith(
+                          decoration: TextDecoration.underline,
+                          fontSize: 12.0,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
