@@ -1,5 +1,6 @@
 import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:tasty_food_one/styles/styling.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -95,7 +96,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   ),
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.02,
+                  height: MediaQuery.of(context).size.height * 0.01,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -103,15 +104,52 @@ class _WelcomePageState extends State<WelcomePage> {
                   children: [
                     Text(
                       "Don't have an account?",
-                      style: normalTextStyle.copyWith(fontSize: 12.0),
+                      style: normalTextStyle.copyWith(fontSize: 14.0),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showModalBottomSheet(
+                            context: context,
+                            builder: (context) {
+                              return SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.8,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Welcome!",
+                                        style: headingOneStyle.copyWith(
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            0.0, 10.0, 40.0, 10.0),
+                                        child: Text(
+                                          "Experience the magic of tasty food with us once you log in!",
+                                          style: normalTextStyle.copyWith(
+                                            color: HexColor("#292D32")
+                                                .withOpacity(0.5),
+                                            fontSize: 14.0,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            });
+                      },
                       child: Text(
-                        "Don't have an account?",
+                        "Sign up",
                         style: normalTextStyle.copyWith(
                           decoration: TextDecoration.underline,
-                          fontSize: 12.0,
+                          fontSize: 14.0,
                         ),
                       ),
                     ),
