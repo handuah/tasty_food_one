@@ -109,11 +109,12 @@ class _WelcomePageState extends State<WelcomePage> {
                     TextButton(
                       onPressed: () {
                         showModalBottomSheet(
+                            isScrollControlled: true,
                             context: context,
                             builder: (context) {
                               return SizedBox(
                                 height:
-                                    MediaQuery.of(context).size.height * 0.8,
+                                    MediaQuery.of(context).size.height * 0.7,
                                 child: Padding(
                                   padding: const EdgeInsets.all(20.0),
                                   child: Column(
@@ -141,7 +142,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                       ),
                                       Form(
                                         child: Padding(
-                                          padding: EdgeInsets.symmetric(
+                                          padding: const EdgeInsets.symmetric(
                                             vertical: 20.0,
                                           ),
                                           child: Column(
@@ -157,20 +158,23 @@ class _WelcomePageState extends State<WelcomePage> {
                                                   fontSize: 18.0,
                                                 ),
                                               ),
+                                              SizedBox(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.01,
+                                              ),
                                               TextFormField(
                                                 textInputAction:
                                                     TextInputAction.next,
                                                 decoration: InputDecoration(
+                                                  filled: true,
                                                   fillColor:
                                                       HexColor('#F7F7F7'),
-                                                  border: OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color:
-                                                          HexColor('#F7F7F7'),
-                                                      width: 1.0,
-                                                    ),
+                                                  border:
+                                                      const OutlineInputBorder(
                                                     borderRadius:
-                                                        const BorderRadius.all(
+                                                        BorderRadius.all(
                                                       Radius.circular(10.0),
                                                     ),
                                                   ),
@@ -181,6 +185,143 @@ class _WelcomePageState extends State<WelcomePage> {
                                                     fontSize: 14.0,
                                                   ),
                                                 ),
+                                              ),
+                                              SizedBox(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.02,
+                                              ),
+                                              Text(
+                                                "Password",
+                                                style: headingOneStyle.copyWith(
+                                                  color: Colors.black,
+                                                  fontSize: 18.0,
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.01,
+                                              ),
+                                              TextFormField(
+                                                textInputAction:
+                                                    TextInputAction.next,
+                                                decoration: InputDecoration(
+                                                  filled: true,
+                                                  fillColor:
+                                                      HexColor('#F7F7F7'),
+                                                  border:
+                                                      const OutlineInputBorder(
+                                                    borderRadius:
+                                                        BorderRadius.all(
+                                                      Radius.circular(10.0),
+                                                    ),
+                                                  ),
+                                                  hintText: '*******',
+                                                  hintStyle:
+                                                      normalTextStyle.copyWith(
+                                                    color: Colors.grey,
+                                                    fontSize: 14.0,
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.02,
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.end,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.end,
+                                                children: [
+                                                  Text(
+                                                    "Forgotten Password?",
+                                                    style: normalTextStyle
+                                                        .copyWith(
+                                                      color: orangeColor,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.02,
+                                              ),
+                                              SizedBox(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.06,
+                                                width: MediaQuery.of(context)
+                                                    .size
+                                                    .width,
+                                                child: ElevatedButton(
+                                                  style:
+                                                      ElevatedButton.styleFrom(
+                                                    primary: orangeColor,
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10.0),
+                                                    ),
+                                                    elevation: 8.0,
+                                                  ),
+                                                  onPressed: () {},
+                                                  child: Text(
+                                                    "Sign Up",
+                                                    style: normalTextStyle,
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.02,
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    "Don't have an account?",
+                                                    style: normalTextStyle
+                                                        .copyWith(
+                                                      fontSize: 14.0,
+                                                      color: HexColor("#292D32")
+                                                          .withOpacity(0.5),
+                                                    ),
+                                                  ),
+                                                  TextButton(
+                                                    onPressed: () {},
+                                                    child: Text(
+                                                      "Sign in",
+                                                      style: normalTextStyle
+                                                          .copyWith(
+                                                        decoration:
+                                                            TextDecoration
+                                                                .underline,
+                                                        fontSize: 14.0,
+                                                        color:
+                                                            HexColor("#292D32"),
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
                                             ],
                                           ),
