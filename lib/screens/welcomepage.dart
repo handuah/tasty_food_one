@@ -14,6 +14,7 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: Stack(
         alignment: AlignmentDirectional.center,
         children: [
@@ -111,12 +112,21 @@ class _WelcomePageState extends State<WelcomePage> {
                         showModalBottomSheet(
                             isScrollControlled: true,
                             context: context,
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(50.0),
+                                topRight: Radius.circular(50.0),
+                              ),
+                            ),
                             builder: (context) {
                               return SizedBox(
                                 height:
                                     MediaQuery.of(context).size.height * 0.7,
                                 child: Padding(
-                                  padding: const EdgeInsets.all(20.0),
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 30.0,
+                                    horizontal: 20.0,
+                                  ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
