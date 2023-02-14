@@ -14,7 +14,7 @@ class BottomNavigationParent extends StatefulWidget {
 
 class _BottomNavigationParentState extends State<BottomNavigationParent> {
   int pageIndex = 0;
-  List pages = [
+  final pages = [
     const HomePage(),
     const ExplorePage(),
     const CartPage(),
@@ -23,6 +23,8 @@ class _BottomNavigationParentState extends State<BottomNavigationParent> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true, //makes bottomnav border radius visible
+      body: pages[pageIndex], //the pages
       bottomNavigationBar: Container(
         height: 80.0,
         decoration: BoxDecoration(
@@ -40,14 +42,25 @@ class _BottomNavigationParentState extends State<BottomNavigationParent> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.home_outlined),
+                  onPressed: () {
+                    setState(() {
+                      pageIndex = 0;
+                    });
+                  },
+                  icon: Icon(
+                    Icons.home_outlined,
+                    color: pageIndex == 0
+                        ? bottomNavActiveColor
+                        : bottomNavInactiveColor,
+                  ),
                 ),
                 Text(
                   "Home",
                   style: normalTextStyle.copyWith(
                     fontSize: 12.0,
-                    color: bottomNavActiveColor,
+                    color: pageIndex == 0
+                        ? bottomNavActiveColor
+                        : bottomNavInactiveColor,
                   ),
                 ),
               ],
@@ -57,14 +70,25 @@ class _BottomNavigationParentState extends State<BottomNavigationParent> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.explore_off_outlined),
+                  onPressed: () {
+                    setState(() {
+                      pageIndex = 1;
+                    });
+                  },
+                  icon: Icon(
+                    Icons.explore_off_outlined,
+                    color: pageIndex == 1
+                        ? bottomNavActiveColor
+                        : bottomNavInactiveColor,
+                  ),
                 ),
                 Text(
                   "Explore",
                   style: normalTextStyle.copyWith(
                     fontSize: 12.0,
-                    color: bottomNavActiveColor,
+                    color: pageIndex == 1
+                        ? bottomNavActiveColor
+                        : bottomNavInactiveColor,
                   ),
                 ),
               ],
@@ -74,14 +98,25 @@ class _BottomNavigationParentState extends State<BottomNavigationParent> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.shop_2_outlined),
+                  onPressed: () {
+                    setState(() {
+                      pageIndex = 2;
+                    });
+                  },
+                  icon: Icon(
+                    Icons.shop_2_outlined,
+                    color: pageIndex == 2
+                        ? bottomNavActiveColor
+                        : bottomNavInactiveColor,
+                  ),
                 ),
                 Text(
                   "Cart",
                   style: normalTextStyle.copyWith(
                     fontSize: 12.0,
-                    color: bottomNavActiveColor,
+                    color: pageIndex == 2
+                        ? bottomNavActiveColor
+                        : bottomNavInactiveColor,
                   ),
                 ),
               ],
@@ -91,14 +126,25 @@ class _BottomNavigationParentState extends State<BottomNavigationParent> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.person_add_alt_1_outlined),
+                  onPressed: () {
+                    setState(() {
+                      pageIndex = 3;
+                    });
+                  },
+                  icon: Icon(
+                    Icons.person_add_alt_1_outlined,
+                    color: pageIndex == 3
+                        ? bottomNavActiveColor
+                        : bottomNavInactiveColor,
+                  ),
                 ),
                 Text(
                   "Account",
                   style: normalTextStyle.copyWith(
                     fontSize: 12.0,
-                    color: bottomNavActiveColor,
+                    color: pageIndex == 3
+                        ? bottomNavActiveColor
+                        : bottomNavInactiveColor,
                   ),
                 ),
               ],
