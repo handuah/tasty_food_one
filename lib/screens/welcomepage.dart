@@ -123,9 +123,11 @@ class _WelcomePageState extends State<WelcomePage> {
                                 height:
                                     MediaQuery.of(context).size.height * 0.7,
                                 child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                    vertical: 30.0,
-                                    horizontal: 20.0,
+                                  padding: const EdgeInsets.fromLTRB(
+                                    20.0,
+                                    50.0,
+                                    20.0,
+                                    20.0,
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
@@ -253,7 +255,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                                     "Forgotten Password?",
                                                     style: normalTextStyle
                                                         .copyWith(
-                                                      color: orangeColor,
+                                                      color: deepRedColor,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                     ),
@@ -288,7 +290,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                                   ),
                                                   onPressed: () {},
                                                   child: Text(
-                                                    "Sign Up",
+                                                    "Sign In",
                                                     style: normalTextStyle,
                                                   ),
                                                 ),
