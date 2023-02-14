@@ -1,6 +1,7 @@
 import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:tasty_food_one/screens/bottomNavigationParent.dart';
 import 'package:tasty_food_one/styles/styling.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -89,7 +90,14 @@ class _WelcomePageState extends State<WelcomePage> {
                       ),
                       elevation: 8.0,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const BottomNavigationParent(),
+                        ),
+                      );
+                    },
                     child: Text(
                       "Sign In",
                       style: normalTextStyle,
