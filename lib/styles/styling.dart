@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 Color orangeColor = HexColor("#FF8D06");
+Color brightOrangeColor = HexColor("##FFC107");
 Color whiteColor = HexColor("#FFFFFF");
 Color deepRedColor = HexColor("##BA0E0E");
 Color bottomNavActiveColor = HexColor("#292D32");
