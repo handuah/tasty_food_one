@@ -25,131 +25,139 @@ class _BottomNavigationParentState extends State<BottomNavigationParent> {
     return Scaffold(
       extendBody: true, //makes bottomnav border radius visible
       body: pages[pageIndex], //the pages
-      bottomNavigationBar: Container(
-        height: 80.0,
-        decoration: BoxDecoration(
-          color: whiteColor,
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(50.0),
-            topRight: Radius.circular(50.0),
-          ),
+      bottomNavigationBar: Theme(
+        data: ThemeData(
+          primaryColor: const Color(0xff2F8D46),
+          splashColor: Colors.red,
+          highlightColor: Colors.transparent,
+          hoverColor: Colors.transparent,
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                IconButton(
-                  onPressed: () {
-                    setState(() {
-                      pageIndex = 0;
-                    });
-                  },
-                  icon: Icon(
-                    Icons.home_outlined,
-                    color: pageIndex == 0
-                        ? bottomNavActiveColor
-                        : bottomNavInactiveColor,
-                  ),
-                ),
-                Text(
-                  "Home",
-                  style: normalTextStyle.copyWith(
-                    fontSize: 12.0,
-                    color: pageIndex == 0
-                        ? bottomNavActiveColor
-                        : bottomNavInactiveColor,
-                  ),
-                ),
-              ],
+        child: Container(
+          height: 80.0,
+          decoration: BoxDecoration(
+            color: whiteColor,
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(50.0),
+              topRight: Radius.circular(50.0),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                IconButton(
-                  onPressed: () {
-                    setState(() {
-                      pageIndex = 1;
-                    });
-                  },
-                  icon: Icon(
-                    Icons.explore_off_outlined,
-                    color: pageIndex == 1
-                        ? bottomNavActiveColor
-                        : bottomNavInactiveColor,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      setState(() {
+                        pageIndex = 0;
+                      });
+                    },
+                    icon: Icon(
+                      Icons.home_outlined,
+                      color: pageIndex == 0
+                          ? bottomNavActiveColor
+                          : bottomNavInactiveColor,
+                    ),
                   ),
-                ),
-                Text(
-                  "Explore",
-                  style: normalTextStyle.copyWith(
-                    fontSize: 12.0,
-                    color: pageIndex == 1
-                        ? bottomNavActiveColor
-                        : bottomNavInactiveColor,
+                  Text(
+                    "Home",
+                    style: normalTextStyle.copyWith(
+                      fontSize: 12.0,
+                      color: pageIndex == 0
+                          ? bottomNavActiveColor
+                          : bottomNavInactiveColor,
+                    ),
                   ),
-                ),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                IconButton(
-                  onPressed: () {
-                    setState(() {
-                      pageIndex = 2;
-                    });
-                  },
-                  icon: Icon(
-                    Icons.shop_2_outlined,
-                    color: pageIndex == 2
-                        ? bottomNavActiveColor
-                        : bottomNavInactiveColor,
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      setState(() {
+                        pageIndex = 1;
+                      });
+                    },
+                    icon: Icon(
+                      Icons.explore_off_outlined,
+                      color: pageIndex == 1
+                          ? bottomNavActiveColor
+                          : bottomNavInactiveColor,
+                    ),
                   ),
-                ),
-                Text(
-                  "Cart",
-                  style: normalTextStyle.copyWith(
-                    fontSize: 12.0,
-                    color: pageIndex == 2
-                        ? bottomNavActiveColor
-                        : bottomNavInactiveColor,
+                  Text(
+                    "Explore",
+                    style: normalTextStyle.copyWith(
+                      fontSize: 12.0,
+                      color: pageIndex == 1
+                          ? bottomNavActiveColor
+                          : bottomNavInactiveColor,
+                    ),
                   ),
-                ),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                IconButton(
-                  onPressed: () {
-                    setState(() {
-                      pageIndex = 3;
-                    });
-                  },
-                  icon: Icon(
-                    Icons.person_add_alt_1_outlined,
-                    color: pageIndex == 3
-                        ? bottomNavActiveColor
-                        : bottomNavInactiveColor,
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      setState(() {
+                        pageIndex = 2;
+                      });
+                    },
+                    icon: Icon(
+                      Icons.shop_2_outlined,
+                      color: pageIndex == 2
+                          ? bottomNavActiveColor
+                          : bottomNavInactiveColor,
+                    ),
                   ),
-                ),
-                Text(
-                  "Account",
-                  style: normalTextStyle.copyWith(
-                    fontSize: 12.0,
-                    color: pageIndex == 3
-                        ? bottomNavActiveColor
-                        : bottomNavInactiveColor,
+                  Text(
+                    "Cart",
+                    style: normalTextStyle.copyWith(
+                      fontSize: 12.0,
+                      color: pageIndex == 2
+                          ? bottomNavActiveColor
+                          : bottomNavInactiveColor,
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      setState(() {
+                        pageIndex = 3;
+                      });
+                    },
+                    icon: Icon(
+                      Icons.person_add_alt_1_outlined,
+                      color: pageIndex == 3
+                          ? bottomNavActiveColor
+                          : bottomNavInactiveColor,
+                    ),
+                  ),
+                  Text(
+                    "Account",
+                    style: normalTextStyle.copyWith(
+                      fontSize: 12.0,
+                      color: pageIndex == 3
+                          ? bottomNavActiveColor
+                          : bottomNavInactiveColor,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
