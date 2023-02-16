@@ -17,7 +17,7 @@ class _ExplorePageState extends State<ExplorePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: whiteColor,
+      backgroundColor: pageBgColor,
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(
@@ -43,9 +43,12 @@ class _ExplorePageState extends State<ExplorePage> {
               height: 15.0,
             ),
             Container(
-              height: 30.0,
+              height: 32.0,
               width: MediaQuery.of(context).size.width,
               child: ListView.separated(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 2.0,
+                ),
                 itemBuilder: (context, int foodTypeIndex) => foodCatBtns(
                   context,
                   foodCategoriesBtns[foodTypeIndex],
@@ -144,10 +147,15 @@ class _ExplorePageState extends State<ExplorePage> {
         style: ElevatedButton.styleFrom(
           primary: foodCatNameIndex == foodCategoriesBtns.indexOf(foodCatName)
               ? bottomNavActiveColor
-              : bottomNavInactiveColor,
-          elevation: 5.0,
+              : pageBgColor,
+          elevation: 2.0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
+            side: BorderSide(
+              color: foodCatNameIndex == foodCategoriesBtns.indexOf(foodCatName)
+                  ? bottomNavActiveColor
+                  : HexColor("#C4C4C4"),
+            ),
           ),
         ),
         onPressed: () {
@@ -162,6 +170,9 @@ class _ExplorePageState extends State<ExplorePage> {
           style: normalTextStyle.copyWith(
             fontWeight: FontWeight.w100,
             fontSize: 12.0,
+            color: foodCatNameIndex == foodCategoriesBtns.indexOf(foodCatName)
+                ? whiteColor
+                : HexColor("#C4C4C4"),
           ),
         ),
       ),
