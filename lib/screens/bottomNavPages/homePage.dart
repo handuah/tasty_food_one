@@ -40,6 +40,120 @@ class _HomePageState extends State<HomePage> {
               height: 10.0,
             ),
             promoCard(context),
+            const SizedBox(
+              height: 5.0,
+            ),
+            dotsRow(context),
+            const SizedBox(
+              height: 10.0,
+            ),
+            popularFoodsAndBtn(context),
+            const SizedBox(
+              height: 10.0,
+            ),
+            Container(
+              height: 220.0,
+              width: MediaQuery.of(context).size.width,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  SizedBox(
+                    height: 150.0,
+                    width: 150.0,
+                    child: Card(
+                      elevation: 20.0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25.0),
+                      ),
+                      // color: bottomNavActiveColor,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 10.0,
+                          horizontal: 10.0,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.star,
+                                  color: brightOrangeColor,
+                                  size: 10.0,
+                                ),
+                                const SizedBox(
+                                  width: 2.0,
+                                ),
+                                Text(
+                                  "4.5",
+                                  style: headingOneStyle.copyWith(
+                                    color: HexColor("##76777C"),
+                                    fontWeight: FontWeight.w100,
+                                    fontSize: 10.0,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 10.0,
+                            ),
+                            Container(
+                              height: 120.0,
+                              width: MediaQuery.of(context).size.width,
+                              child: Image.network(
+                                "https://thumbs.dreamstime.com/b/italian-pizza-white-background-isolated-italian-pizza-white-background-146709376.jpg",
+                                fit: BoxFit.fill,
+                              ),
+                              color: Colors.green,
+                            ),
+                            const SizedBox(
+                              height: 10.0,
+                            ),
+                            Text(
+                              "Meat Lovers Pizza",
+                              style: normalTextStyle.copyWith(
+                                color: HexColor("##76777C"),
+                                fontWeight: FontWeight.w200,
+                                fontSize: 10.0,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 5.0,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  r'$10,000',
+                                  style: headingOneStyle.copyWith(
+                                    color: HexColor("##76777C"),
+                                    fontWeight: FontWeight.w200,
+                                    fontSize: 10.0,
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.add_circle_rounded,
+                                  color: brightOrangeColor,
+                                  size: 20.0,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              color: brightOrangeColor,
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
           ],
         ),
       ),
@@ -210,6 +324,72 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+    );
+  }
+
+  Center dotsRow(BuildContext context) {
+    return Center(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            height: 10.0,
+            width: 10.0,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(100.0),
+              color: bottomNavInactiveColor,
+            ),
+          ),
+          const SizedBox(
+            width: 5.0,
+          ),
+          Container(
+            height: 10.0,
+            width: 10.0,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(100.0),
+              color: brightOrangeColor,
+            ),
+          ),
+          const SizedBox(
+            width: 5.0,
+          ),
+          Container(
+            height: 10.0,
+            width: 10.0,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(100.0),
+              color: bottomNavInactiveColor,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Row popularFoodsAndBtn(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          "Most Popular Orders",
+          style: normalTextStyle.copyWith(
+            color: bottomNavActiveColor,
+            fontWeight: FontWeight.w200,
+          ),
+        ),
+        TextButton(
+          onPressed: () {},
+          child: Text(
+            "View All",
+            style: normalTextStyle.copyWith(
+              color: brightOrangeColor,
+              fontWeight: FontWeight.w100,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
