@@ -8,6 +8,7 @@ Color whiteColor = HexColor("#FFFFFF");
 Color deepRedColor = HexColor("##BA0E0E");
 Color bottomNavActiveColor = HexColor("#292D32");
 Color bottomNavInactiveColor = HexColor("#B4B4B4");
+Color pageBgColor = HexColor("#F7F7F7");
 
 TextStyle headingOneStyle = GoogleFonts.inter(
   color: whiteColor,
