@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:tasty_food_one/styles/styling.dart';
+import 'package:tasty_food_one/utils/food_card_data.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -56,15 +57,18 @@ class _HomePageState extends State<HomePage> {
               width: MediaQuery.of(context).size.width,
               child: ListView.separated(
                 itemBuilder: (context, int foodCardIndex) => foodCard(
-                    context,
-                    "https://thumbs.dreamstime.com/b/italian-pizza-white-background-isolated-italian-pizza-white-background-146709376.jpg",
-                    "Meat Lovers Pizza",
-                    10.00),
+                  context,
+                  // "https://thumbs.dreamstime.com/b/italian-pizza-white-background-isolated-italian-pizza-white-background-146709376.jpg",
+                  foodCardData[foodCardIndex]['foodImgUrl'],
+                  // "Meat Lovers Pizza",
+                  foodCardData[foodCardIndex]['foodName'],
+                  foodCardData[foodCardIndex]['foodCost'],
+                ),
                 separatorBuilder: (context, int foodCardIndex) =>
                     const SizedBox(
                   width: 10.0,
                 ),
-                itemCount: 8,
+                itemCount: foodCardData.length,
                 scrollDirection: Axis.horizontal,
               ),
               color: HexColor("#FFFFFF"),
