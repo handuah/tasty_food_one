@@ -1,4 +1,4 @@
-List foodardData = [
+List foodCardData = [
   {
     'id': 1,
     'foodImgUrl':
