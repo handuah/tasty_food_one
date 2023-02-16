@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: whiteColor,
+      backgroundColor: pageBgColor,
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(
