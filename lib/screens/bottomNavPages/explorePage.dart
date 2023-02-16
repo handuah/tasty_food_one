@@ -12,6 +12,8 @@ class ExplorePage extends StatefulWidget {
 
 class _ExplorePageState extends State<ExplorePage> {
   List foodCategoriesBtns = ["All", "Burgers", "Pizza", "Drinks", "Pasta"];
+  int foodCatNameIndex = 99;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -140,13 +142,20 @@ class _ExplorePageState extends State<ExplorePage> {
       width: 80.0,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: bottomNavActiveColor,
+          primary: foodCatNameIndex == foodCategoriesBtns.indexOf(foodCatName)
+              ? bottomNavActiveColor
+              : bottomNavInactiveColor,
           elevation: 5.0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
           ),
         ),
-        onPressed: () {},
+        onPressed: () {
+          setState(() {
+            // set button index to index of food category in array
+            foodCatNameIndex = foodCategoriesBtns.indexOf(foodCatName);
+          });
+        },
         child: Text(
           foodCatName,
           softWrap: true,
