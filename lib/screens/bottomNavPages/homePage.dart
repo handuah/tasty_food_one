@@ -54,286 +54,18 @@ class _HomePageState extends State<HomePage> {
             Container(
               height: 230.0,
               width: MediaQuery.of(context).size.width,
-              child: ListView(
+              child: ListView.separated(
+                itemBuilder: (context, int foodCardIndex) => foodCard(
+                    context,
+                    "https://thumbs.dreamstime.com/b/italian-pizza-white-background-isolated-italian-pizza-white-background-146709376.jpg",
+                    "Meat Lovers Pizza",
+                    10.00),
+                separatorBuilder: (context, int foodCardIndex) =>
+                    const SizedBox(
+                  width: 10.0,
+                ),
+                itemCount: 8,
                 scrollDirection: Axis.horizontal,
-                children: [
-                  SizedBox(
-                    height: 150.0,
-                    width: 160.0,
-                    child: Card(
-                      elevation: 5.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25.0),
-                      ),
-                      // color: bottomNavActiveColor,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 10.0,
-                          horizontal: 10.0,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.star,
-                                  color: brightOrangeColor,
-                                  size: 10.0,
-                                ),
-                                const SizedBox(
-                                  width: 2.0,
-                                ),
-                                Text(
-                                  "4.5",
-                                  style: headingOneStyle.copyWith(
-                                    color: HexColor("##76777C"),
-                                    fontWeight: FontWeight.w100,
-                                    fontSize: 10.0,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 10.0,
-                            ),
-                            Container(
-                              height: 120.0,
-                              width: MediaQuery.of(context).size.width,
-                              child: Image.network(
-                                "https://thumbs.dreamstime.com/b/italian-pizza-white-background-isolated-italian-pizza-white-background-146709376.jpg",
-                                fit: BoxFit.fill,
-                              ),
-                              color: Colors.green,
-                            ),
-                            const SizedBox(
-                              height: 10.0,
-                            ),
-                            Text(
-                              "Meat Lovers Pizza",
-                              style: normalTextStyle.copyWith(
-                                color: HexColor("##76777C"),
-                                fontWeight: FontWeight.w200,
-                                fontSize: 10.0,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 5.0,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  r'$10.11', //means of writing raw text in flutter
-                                  style: headingOneStyle.copyWith(
-                                    color: HexColor("#76777C"),
-                                    fontWeight: FontWeight.w200,
-                                    fontSize: 15.0,
-                                  ),
-                                ),
-                                Icon(
-                                  Icons.add_circle_rounded,
-                                  color: brightOrangeColor,
-                                  size: 20.0,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  SizedBox(
-                    height: 150.0,
-                    width: 160.0,
-                    child: Card(
-                      elevation: 5.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25.0),
-                      ),
-                      // color: bottomNavActiveColor,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 10.0,
-                          horizontal: 10.0,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.star,
-                                  color: brightOrangeColor,
-                                  size: 10.0,
-                                ),
-                                const SizedBox(
-                                  width: 2.0,
-                                ),
-                                Text(
-                                  "4.5",
-                                  style: headingOneStyle.copyWith(
-                                    color: HexColor("##76777C"),
-                                    fontWeight: FontWeight.w100,
-                                    fontSize: 10.0,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 10.0,
-                            ),
-                            Container(
-                              height: 120.0,
-                              width: MediaQuery.of(context).size.width,
-                              child: Image.network(
-                                "https://thumbs.dreamstime.com/b/italian-pizza-white-background-isolated-italian-pizza-white-background-146709376.jpg",
-                                fit: BoxFit.fill,
-                              ),
-                              color: Colors.green,
-                            ),
-                            const SizedBox(
-                              height: 10.0,
-                            ),
-                            Text(
-                              "Meat Lovers Pizza",
-                              style: normalTextStyle.copyWith(
-                                color: HexColor("##76777C"),
-                                fontWeight: FontWeight.w200,
-                                fontSize: 10.0,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 5.0,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  r'$10.11', //means of writing raw text in flutter
-                                  style: headingOneStyle.copyWith(
-                                    color: HexColor("#76777C"),
-                                    fontWeight: FontWeight.w200,
-                                    fontSize: 15.0,
-                                  ),
-                                ),
-                                Icon(
-                                  Icons.add_circle_rounded,
-                                  color: brightOrangeColor,
-                                  size: 20.0,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  SizedBox(
-                    height: 150.0,
-                    width: 160.0,
-                    child: Card(
-                      elevation: 5.0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25.0),
-                      ),
-                      // color: bottomNavActiveColor,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 10.0,
-                          horizontal: 10.0,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.star,
-                                  color: brightOrangeColor,
-                                  size: 10.0,
-                                ),
-                                const SizedBox(
-                                  width: 2.0,
-                                ),
-                                Text(
-                                  "4.5",
-                                  style: headingOneStyle.copyWith(
-                                    color: HexColor("##76777C"),
-                                    fontWeight: FontWeight.w100,
-                                    fontSize: 10.0,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 10.0,
-                            ),
-                            Container(
-                              height: 120.0,
-                              width: MediaQuery.of(context).size.width,
-                              child: Image.network(
-                                "https://thumbs.dreamstime.com/b/italian-pizza-white-background-isolated-italian-pizza-white-background-146709376.jpg",
-                                fit: BoxFit.fill,
-                              ),
-                              color: Colors.green,
-                            ),
-                            const SizedBox(
-                              height: 10.0,
-                            ),
-                            Text(
-                              "Meat Lovers Pizza",
-                              style: normalTextStyle.copyWith(
-                                color: HexColor("##76777C"),
-                                fontWeight: FontWeight.w200,
-                                fontSize: 10.0,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 5.0,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  r'$10.11', //means of writing raw text in flutter
-                                  style: headingOneStyle.copyWith(
-                                    color: HexColor("#76777C"),
-                                    fontWeight: FontWeight.w200,
-                                    fontSize: 15.0,
-                                  ),
-                                ),
-                                Icon(
-                                  Icons.add_circle_rounded,
-                                  color: brightOrangeColor,
-                                  size: 20.0,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
               ),
               color: HexColor("#FFFFFF"),
             ),
@@ -576,6 +308,103 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ],
+    );
+  }
+
+  SizedBox foodCard(
+      BuildContext context, String imgUrl, String foodName, double foodAmt) {
+    return SizedBox(
+      height: 150.0,
+      width: 160.0,
+      child: Card(
+        elevation: 5.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25.0),
+        ),
+        // color: bottomNavActiveColor,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: 10.0,
+            horizontal: 10.0,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.star,
+                    color: brightOrangeColor,
+                    size: 10.0,
+                  ),
+                  const SizedBox(
+                    width: 2.0,
+                  ),
+                  Text(
+                    "4.5",
+                    style: headingOneStyle.copyWith(
+                      color: HexColor("##76777C"),
+                      fontWeight: FontWeight.w100,
+                      fontSize: 10.0,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Container(
+                height: 120.0,
+                width: MediaQuery.of(context).size.width,
+                child: Image.network(
+                  // "https://thumbs.dreamstime.com/b/italian-pizza-white-background-isolated-italian-pizza-white-background-146709376.jpg",
+                  imgUrl,
+                  fit: BoxFit.fill,
+                ),
+                color: bottomNavInactiveColor,
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Text(
+                // "Meat Lovers Pizza",
+                foodName,
+                style: normalTextStyle.copyWith(
+                  color: HexColor("##76777C"),
+                  fontWeight: FontWeight.w200,
+                  fontSize: 10.0,
+                ),
+              ),
+              const SizedBox(
+                height: 5.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    // r'$10.11', //means of writing raw text in flutter
+                    "\$$foodAmt",
+                    style: headingOneStyle.copyWith(
+                      color: HexColor("#76777C"),
+                      fontWeight: FontWeight.w200,
+                      fontSize: 15.0,
+                    ),
+                  ),
+                  Icon(
+                    Icons.add_circle_rounded,
+                    color: brightOrangeColor,
+                    size: 20.0,
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
