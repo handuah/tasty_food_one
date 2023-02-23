@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:lottie/lottie.dart';
 import 'package:tasty_food_one/styles/styling.dart';
 import 'package:tasty_food_one/utils/food_card_data.dart';
 
@@ -87,10 +88,17 @@ class _HomePageState extends State<HomePage> {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const CircleAvatar(
-          backgroundImage: NetworkImage(
-            "https://w7.pngwing.com/pngs/129/292/png-transparent-female-avatar-girl-face-woman-user-flat-classy-users-icon.png",
+        CircleAvatar(
+          // backgroundImage: NetworkImage(
+          //   "https://w7.pngwing.com/pngs/129/292/png-transparent-female-avatar-girl-face-woman-user-flat-classy-users-icon.png",
+          // ),
+          child: Lottie.network(
+            'https://assets10.lottiefiles.com/private_files/lf30_hrc0i25p.json',
+            height: 300.00,
+            width: 200.00,
+            fit: BoxFit.cover,
           ),
+          backgroundColor: Colors.blue[100],
           maxRadius: 30.0,
         ),
         const SizedBox(
@@ -131,17 +139,22 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         const SizedBox(
-          width: 120.0,
+          width: 100.0,
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20.0),
+          padding: const EdgeInsets.symmetric(vertical: 10.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(
-                Icons.notifications_none_outlined,
-                color: bottomNavActiveColor,
-                size: 30.0,
+              // Icon(
+              //   Icons.notifications_none_outlined,
+              //   color: bottomNavActiveColor,
+              //   size: 30.0,
+              // ),
+              Lottie.network(
+                'https://assets7.lottiefiles.com/packages/lf20_0skurerf.json',
+                height: 50.0,
+                width: 50.0,
               ),
             ],
           ),
