@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:tasty_food_one/screens/bottomNavPages/accountPage.dart';
 import 'package:tasty_food_one/screens/bottomNavPages/cartPage.dart';
 import 'package:tasty_food_one/screens/bottomNavPages/explorePage.dart';
@@ -12,7 +13,8 @@ class BottomNavigationParent extends StatefulWidget {
   State<BottomNavigationParent> createState() => _BottomNavigationParentState();
 }
 
-class _BottomNavigationParentState extends State<BottomNavigationParent> {
+class _BottomNavigationParentState extends State<BottomNavigationParent>
+    with TickerProviderStateMixin {
   int pageIndex = 0;
   final pages = [
     const HomePage(),
@@ -20,6 +22,22 @@ class _BottomNavigationParentState extends State<BottomNavigationParent> {
     const CartPage(),
     const AccountPage()
   ];
+
+  late final AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,17 +66,21 @@ class _BottomNavigationParentState extends State<BottomNavigationParent> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  IconButton(
-                    onPressed: () {
+                  GestureDetector(
+                    onTap: () {
                       setState(() {
                         pageIndex = 0;
                       });
                     },
-                    icon: Icon(
-                      Icons.home_outlined,
-                      color: pageIndex == 0
-                          ? bottomNavActiveColor
-                          : bottomNavInactiveColor,
+                    child: SizedBox(
+                      // color: orangeColor,
+                      height: 50.0,
+                      width: 50.0,
+                      child: Lottie.network(
+                        'https://assets8.lottiefiles.com/packages/lf20_o8btuiyj.json',
+                        fit: BoxFit.contain,
+                        animate: pageIndex == 0 ? true : false,
+                      ),
                     ),
                   ),
                   Text(
@@ -76,17 +98,21 @@ class _BottomNavigationParentState extends State<BottomNavigationParent> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  IconButton(
-                    onPressed: () {
+                  GestureDetector(
+                    onTap: () {
                       setState(() {
                         pageIndex = 1;
                       });
                     },
-                    icon: Icon(
-                      Icons.explore_off_outlined,
-                      color: pageIndex == 1
-                          ? bottomNavActiveColor
-                          : bottomNavInactiveColor,
+                    child: SizedBox(
+                      // color: orangeColor,
+                      height: 50.0,
+                      width: 50.0,
+                      child: Lottie.network(
+                        'https://assets1.lottiefiles.com/packages/lf20_tk3k6c0j.json',
+                        fit: BoxFit.contain,
+                        animate: pageIndex == 1 ? true : false,
+                      ),
                     ),
                   ),
                   Text(
@@ -104,17 +130,21 @@ class _BottomNavigationParentState extends State<BottomNavigationParent> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  IconButton(
-                    onPressed: () {
+                  GestureDetector(
+                    onTap: () {
                       setState(() {
                         pageIndex = 2;
                       });
                     },
-                    icon: Icon(
-                      Icons.shop_2_outlined,
-                      color: pageIndex == 2
-                          ? bottomNavActiveColor
-                          : bottomNavInactiveColor,
+                    child: SizedBox(
+                      // color: orangeColor,
+                      height: 50.0,
+                      width: 50.0,
+                      child: Lottie.network(
+                        'https://assets10.lottiefiles.com/private_files/lf30_xdjeaghh.json',
+                        fit: BoxFit.contain,
+                        animate: pageIndex == 2 ? true : false,
+                      ),
                     ),
                   ),
                   Text(
@@ -132,17 +162,21 @@ class _BottomNavigationParentState extends State<BottomNavigationParent> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  IconButton(
-                    onPressed: () {
+                  GestureDetector(
+                    onTap: () {
                       setState(() {
                         pageIndex = 3;
                       });
                     },
-                    icon: Icon(
-                      Icons.person_add_alt_1_outlined,
-                      color: pageIndex == 3
-                          ? bottomNavActiveColor
-                          : bottomNavInactiveColor,
+                    child: SizedBox(
+                      // color: orangeColor,
+                      height: 50.0,
+                      width: 50.0,
+                      child: Lottie.network(
+                        'https://assets2.lottiefiles.com/packages/lf20_n5icqxkw.json',
+                        fit: BoxFit.contain,
+                        animate: pageIndex == 3 ? true : false,
+                      ),
                     ),
                   ),
                   Text(
